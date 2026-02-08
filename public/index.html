@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rigatoni's Pomodoro</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍅</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Rigatoni's Pomodoro</h1>
+      <p class="subtitle">Goal-driven focus sessions</p>
+    </header>
+
+    <main>
+      <!-- Setup View -->
+      <section id="setup-view">
+        <form id="setup-form" onsubmit="return false;">
+          <div class="form-group">
+            <label for="goal-input">What do you want to accomplish?</label>
+            <textarea
+              id="goal-input"
+              required
+              placeholder="e.g., Write the introduction for my essay on Roman aqueducts..."
+              rows="3"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="reward-input">What will you do during your break?</label>
+            <textarea
+              id="reward-input"
+              required
+              placeholder="e.g., Make a cup of tea and stretch..."
+              rows="3"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="duration-input">Duration (minutes)</label>
+            <input
+              type="number"
+              id="duration-input"
+              value="25"
+              min="1"
+              max="90"
+              required
+            >
+          </div>
+
+          <button type="submit" id="start-btn" class="btn btn-primary">Start Pomodoro</button>
+        </form>
+      </section>
+
+      <!-- Timer View -->
+      <section id="timer-view" hidden>
+        <p class="timer-goal-reminder" id="current-goal"></p>
+
+        <div id="timer-display">25:00</div>
+
+        <div class="progress-container">
+          <div id="progress-bar"></div>
+        </div>
+
+        <button id="cancel-btn" class="btn btn-danger">Cancel</button>
+      </section>
+
+      <!-- Log Work View -->
+      <section id="log-work-view" hidden>
+        <div class="info-card">
+          <h3>Your goal was</h3>
+          <p id="log-work-goal"></p>
+        </div>
+
+        <form id="log-work-form" onsubmit="return false;">
+          <div class="form-group">
+            <label for="work-log-input">What did you accomplish?</label>
+            <textarea
+              id="work-log-input"
+              required
+              placeholder="Describe what you got done..."
+              rows="4"
+            ></textarea>
+          </div>
+
+          <button type="submit" id="save-work-btn" class="btn btn-primary">Save &amp; Start Break</button>
+        </form>
+      </section>
+
+      <!-- Log Break View -->
+      <section id="log-break-view" hidden>
+        <div class="info-card">
+          <h3>Your reward plan was</h3>
+          <p id="log-break-reward"></p>
+        </div>
+
+        <form id="log-break-form" onsubmit="return false;">
+          <div class="form-group">
+            <label for="break-log-input">What did you do during your break?</label>
+            <textarea
+              id="break-log-input"
+              required
+              placeholder="Describe how you spent your break..."
+              rows="4"
+            ></textarea>
+          </div>
+
+          <button type="submit" id="save-break-btn" class="btn btn-primary">Complete &amp; Start New</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- History Section -->
+    <section id="history-section">
+      <h2>Work Log</h2>
+      <div class="table-wrapper">
+        <div id="history-list"></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

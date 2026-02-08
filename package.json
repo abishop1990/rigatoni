@@ -1,0 +1,21 @@
+{
+  "name": "rigatonis-pomodoro",
+  "version": "0.1.0",
+  "description": "Rigatoni's Pomodoro - A goal-driven Pomodoro timer with session logging",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "pomodoro",
+    "timer",
+    "productivity"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^12.6.2",
+    "express": "^5.2.1"
+  }
+}

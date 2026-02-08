@@ -1,0 +1,5 @@
+node_modules/
+pomodoro.db
+pomodoro.db-shm
+pomodoro.db-wal
+nul
