@@ -365,4 +365,8 @@ saveBreakBtn.addEventListener('click', async () => {
 document.addEventListener('DOMContentLoaded', () => {
   showView('setup');
   fetchAndRenderHistory();
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+  }
 });
